@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kit Festa Personalizado</title>
+
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; }
+    header { background:linear-gradient(135deg,#6a0dad,#9c27b0); color:#fff; padding:30px 20px; text-align:center; }
+    section { padding:20px; max-width:900px; margin:15px auto; background:#fff; border-radius:12px; box-shadow:0 4px 10px rgba(0,0,0,0.1); }
+
+    h1 { margin:0; }
+    h2 { color:#6a0dad; }
+
+    .promo { background:#ffeb3b; padding:12px; border-radius:8px; font-weight:bold; margin-top:10px; }
+    .preco { font-size:24px; margin-top:10px; }
+    .antigo { text-decoration:line-through; color:#d32f2f; margin-right:10px; }
+    .novo { color:#2e7d32; font-weight:bold; }
+
+    .btn {
+      display:block; text-align:center; background:#25D366; color:#fff;
+      padding:15px; border-radius:10px; text-decoration:none; font-weight:bold;
+      margin-top:20px; font-size:18px;
+      animation:pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0%{transform:scale(1);}50%{transform:scale(1.05);}100%{transform:scale(1);} }
+
+    img { width:100%; border-radius:10px; margin-top:10px; }
+
+    .slider { overflow:hidden; border-radius:10px; margin-top:15px; }
+    .slides { display:flex; transition:0.5s; }
+    .slides img { width:100%; flex-shrink:0; }
+
+    .box { background:#fafafa; padding:15px; border-radius:10px; margin-top:10px; }
+
+    .depoimento { background:#f1f1f1; padding:12px; border-radius:8px; margin-top:10px; font-style:italic; }
+
+    .contador { font-weight:bold; color:red; margin-top:10px; }
+
+    .whatsapp-float {
+      position:fixed; bottom:20px; right:20px; background:#25D366;
+      color:#fff; padding:16px; border-radius:50%; text-decoration:none;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Kit Festa Personalizado</h1>
+  <p>Festa linda, prática e sem dor de cabeça 🎉</p>
+
+  <div class="promo">🔥 PROMOÇÃO POR TEMPO LIMITADO</div>
+  <div class="preco">
+    <span class="antigo">De R$90,00</span>
+    <span class="novo">Por R$70,00</span>
+  </div>
+
+  <div class="contador" id="contador"></div>
+
+  <div class="slider">
+    <div class="slides" id="slides">
+      <img src="https://36841.cdn.simplo7.net/static/36841/sku/kits-kits-mesversario-kit-mesversario-personalizado-pacote-com-3-meses--p-1657753240543.jpeg">
+      <img src="https://36841.cdn.simplo7.net/static/36841/sku/kits-festa-mesversario-menino-kit-festa-mesversario-mario-bross-baby--p-1600188084690.png">
+      <img src="https://36841.cdn.simplo7.net/static/36841/sku/kits-kits-mesversario-kit-festa-mesversario-lol--p-1600187997166.png">
+      <img src="https://36841.cdn.simplo7.net/static/36841/sku/kits-kit-festa-aniversario-kit-festa-aniversario-em-casa-bolofofos--p-1652829666744.jpg">
+    </div>
+  </div>
+</header>
+
+<section>
+  <h2>🎁 O que vem no kit</h2>
+  <div class="box">
+    ✔️ Topo de bolo<br>
+    ✔️ 2 Displays de mesa<br>
+    ✔️ 20 Tags decorativas<br>
+    ✔️ 1 Bandeirola com nome
+  </div>
+</section>
+
+<section>
+  <h2>🎉 Bandeirolas</h2>
+  <img src="https://36841.cdn.simplo7.net/static/36841/galeria/161213781083558.jpg">
+  <p>Personalizadas com nome e tema, perfeitas para deixar sua festa incrível.</p>
+</section>
+
+<section>
+  <h2>🍬 Tags</h2>
+  <img src="https://36841.cdn.simplo7.net/static/36841/galeria/158974370240140.png">
+  <p>Decoram doces e cupcakes, deixando tudo mais bonito.</p>
+</section>
+
+<section>
+  <h2>🖼️ Displays</h2>
+  <img src="https://36841.cdn.simplo7.net/static/36841/galeria/158974369592551.png">
+  <p>Ideais para destacar a mesa do bolo e dar um toque profissional.</p>
+</section>
+
+<section>
+  <h2>⚙️ Como funciona</h2>
+  <div class="box">
+    📦 Arte em até 48h<br>
+    🛠️ Produção rápida (2 dias)<br>
+    🚚 Enviamos para todo Brasil
+  </div>
+</section>
+
+<section>
+  <h2>⭐ Clientes amaram</h2>
+  <div class="depoimento">"Ficou perfeito, super recomendo!"</div>
+  <div class="depoimento">"Chegou rápido e muito lindo"</div>
+</section>
+
+<section>
+  <h2>🚀 Garanta o seu agora</h2>
+  <a class="btn" href="https://wa.me/5562999211129">CHAMAR NO WHATSAPP</a>
+</section>
+
+<a class="whatsapp-float" href="https://wa.me/5562999211129">💬</a>
+
+<script>
+  let tempo = 3600;
+  setInterval(()=>{
+    let m=Math.floor(tempo/60);
+    let s=tempo%60;
+    document.getElementById('contador').innerHTML = `⏰ Termina em: ${m}m ${s}s`;
+    tempo--;
+  },1000);
+
+  let index=0;
+  const slides=document.getElementById('slides');
+  const total=slides.children.length;
+
+  setInterval(()=>{
+    index=(index+1)%total;
+    slides.style.transform=`translateX(-${index*100}%)`;
+  },3000);
+</script>
+
+</body>
+</html>
